@@ -49,3 +49,8 @@ class Vacancy:
             employment_name = cls.validate_employment(vac_info.get('employment'))
             instances.append(cls(name, url, salary, city, employment_name).to_json())
         return instances
+
+
+    def __lt__(self, other):
+        "сравнение зарплаты"
+        return self.salary_from < other.salary_from
