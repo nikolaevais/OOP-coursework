@@ -54,3 +54,14 @@ class Vacancy:
     def __lt__(self, other):
         "сравнение зарплаты"
         return self.salary_from < other.salary_from
+
+
+    def to_json(self):
+        "формирует словарь для вакансии"
+        return {
+            'name': self.name,
+            'url': self.url,
+            'salary_from': self.salary_from,
+            'city': self.city,
+            'employment': self.employment_name
+        }
