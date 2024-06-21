@@ -36,3 +36,16 @@ class Vacancy:
                 return employment_name
         return "не указан"
 
+
+    @classmethod
+    def create_vacancies(cls, data):
+
+        instances = []
+        for vac_info in data:
+            name = vac_info.get('name')
+            url = vac_info.get('alternate_url')
+            salary = cls.validate_salary(vac_info.get('salary'))
+            city = cls.validate_city(vac_info.get('area'))
+            employment_name = cls.validate_employment(vac_info.get('employment'))
+            instances.append(cls(name, url, salary, city, employment_name).to_json())
+        return instances
