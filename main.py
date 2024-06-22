@@ -13,7 +13,9 @@ vacancy = Vacancy.create_vacancies(hh_vac.get_vacancy(search_query))
 JSONSave = JSONWorker('vacancies.json').write_file(vacancy)
 list_vacancy = JSONWorker('vacancies.json').read_file('vacancies.json')
 
-while True:
+user_answer_2 = None
+
+while user_answer_2 != "1":
     print("""Для уточнения Вашего запроса выберите следующее действие:
             1 - ввести название города
             2 - ввести минимальную зарплату
@@ -23,5 +25,3 @@ while True:
     user_answer = input()
     user_inter = answer_user(user_answer, list_vacancy, search_query)
     user_answer_2 = input("Нажмите 1 для того чтобы выйти из программы или 2 для того чтобы вернуться в предыдущее меню: ")
-    if user_answer_2 == "1":
-        sys.exit(1)
