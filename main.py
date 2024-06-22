@@ -3,9 +3,6 @@ from src.vacancy import Vacancy
 from src.utils import answer_user
 from src.fileworker import JSONWorker
 
-import sys
-
-
 
 search_query = input("Введите название вакансии для поиска на сайте hh.ru: ")
 hh_vac = HHApi()
