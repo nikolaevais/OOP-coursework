@@ -1,3 +1,10 @@
+from abc import ABC, abstractmethod
+from src.vacancy import Vacancy
+import os
+import json
+from config import ROOT_DIR
+
+FILE_PATH = os.path.join(ROOT_DIR, 'data', 'operations.json')
 
 class SaveFile(ABC):
     """абстрактный класс для работы с файлами"""
